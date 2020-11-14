@@ -118,7 +118,7 @@ struct GetMobileVerifyRequest: APIRequestable {
     let domain: String
 
     var path: String {
-        if let overrideUrl = ProcessInfo.processInfo.environment["OVERRIDE_MOBILE_VERIFY_URL"], domain == ProcessInfo.processInfo.environment["PRIMARY_DOMAIN"] {
+        if let overrideUrl = ProcessInfo.processInfo.environment["OVERRIDE_MOBILE_VERIFY_URL"] {
             return overrideUrl
         }
         return "https://canvas.instructure.com/api/v1/mobile_verify.json"

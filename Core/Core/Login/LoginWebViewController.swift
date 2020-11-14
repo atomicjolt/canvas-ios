@@ -113,11 +113,26 @@ public class LoginWebViewController: UIViewController, ErrorViewController {
 
         // Lookup OAuth from mobile verify
         task?.cancel()
-        task = API().makeRequest(GetMobileVerifyRequest(domain: host)) { [weak self] (response, _, _) in performUIUpdate {
-            self?.mobileVerifyModel = response
-            self?.task = nil
-            self?.loadLoginWebRequest()
-        } }
+        
+        if
+            let primaryDomain = ProcessInfo.processInfo.environment["PRIMARY_DOMAIN"],
+            let primaryClientId = ProcessInfo.processInfo.environment["PRIMARY_CLIENT_ID"],
+            let primaryClientSecret = ProcessInfo.processInfo.environment["PRIMARY_CLIENT_SECRET"],
+            host == primaryDomain {
+            mobileVerifyModel = APIVerifyClient(
+                authorized: true,
+                base_url: URL(string: "https://\(primaryDomain)"),
+                client_id: primaryClientId,
+                client_secret: primaryClientSecret
+            )
+            loadLoginWebRequest()
+        } else {
+            task = API().makeRequest(GetMobileVerifyRequest(domain: host)) { [weak self] (response, _, _) in performUIUpdate {
+                self?.mobileVerifyModel = response
+                self?.task = nil
+                self?.loadLoginWebRequest()
+            } }
+        }
     }
 
     public override func viewWillAppear(_ animated: Bool) {

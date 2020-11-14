@@ -138,6 +138,26 @@
             value = "disable"
             isEnabled = "YES">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRIMARY_DOMAIN"
+            value = "atomiccanvas.ngrok.io"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRIMARY_CLIENT_ID"
+            value = "10000000000003"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRIMARY_CLIENT_SECRET"
+            value = "UwaPMndDeoVlQqB56B9C1JuQkPXf9WFUFjhq0A1CySKo4f77AzBbmKkYlsYJwwd8"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "OVERRIDE_MOBILE_VERIFY_URL"
+            value = "https://atomiccanvas.ngrok.io/api/v1/mobile_verify.json"
+            isEnabled = "NO">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
