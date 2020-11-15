@@ -23,7 +23,17 @@ public class LoginNavigationController: UINavigationController {
     var app: App = .student
 
     public static func create(loginDelegate: LoginDelegate, fromLaunch: Bool = false, app: App) -> LoginNavigationController {
-        let startView = LoginStartViewController.create(loginDelegate: loginDelegate, fromLaunch: fromLaunch, app: app)
+        let startView: UIViewController
+        if let primaryDomain = ProcessInfo.processInfo.environment["PRIMARY_DOMAIN"] {
+            startView = LoginWebViewController.create(
+                host: primaryDomain,
+                loginDelegate: loginDelegate,
+                method: AuthenticationMethod.normalLogin
+            )
+        } else {
+            startView = LoginStartViewController.create(loginDelegate: loginDelegate, fromLaunch: fromLaunch, app: app)
+        }
+        
         let controller = LoginNavigationController(rootViewController: startView)
         controller.app = app
         controller.loginDelegate = loginDelegate
