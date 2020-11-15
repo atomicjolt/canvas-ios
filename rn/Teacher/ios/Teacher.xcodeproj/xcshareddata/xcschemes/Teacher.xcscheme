@@ -132,6 +132,12 @@
             ReferencedContainer = "container:Teacher.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = ""
+            isEnabled = "YES">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
@@ -145,12 +151,12 @@
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "PRIMARY_CLIENT_ID"
-            value = "10000000000003"
+            value = "10000000000001"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "PRIMARY_CLIENT_SECRET"
-            value = "UwaPMndDeoVlQqB56B9C1JuQkPXf9WFUFjhq0A1CySKo4f77AzBbmKkYlsYJwwd8"
+            value = "IfkLe0pZA9Mh4oRzF0meKOBkn92ZO267x5jO8D6bo03N7Qh3NF2PRCnAKpmkMhi7"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable

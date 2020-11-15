@@ -107,6 +107,21 @@
             value = "disable"
             isEnabled = "NO">
          </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRIMARY_CLIENT_ID"
+            value = "10000000000001"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRIMARY_CLIENT_SECRET"
+            value = "IfkLe0pZA9Mh4oRzF0meKOBkn92ZO267x5jO8D6bo03N7Qh3NF2PRCnAKpmkMhi7"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "PRIMARY_DOMAIN"
+            value = "atomiccanvas.ngrok.io"
+            isEnabled = "YES">
+         </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
