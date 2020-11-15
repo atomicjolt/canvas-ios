@@ -197,7 +197,7 @@ class LoginStartViewController: UIViewController {
 
     @IBAction func findTapped(_ sender: UIButton) {
         var controller: UIViewController = LoginFindSchoolViewController.create(loginDelegate: loginDelegate, method: method)
-        if let host = MDMManager.shared.host {
+        if let host = ProcessInfo.processInfo.environment["PRIMARY_DOMAIN"] {
             let provider = MDMManager.shared.authenticationProvider
             if method == .manualOAuthLogin {
                 controller = LoginManualOAuthViewController.create(
